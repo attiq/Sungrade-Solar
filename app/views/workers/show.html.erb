@@ -1,0 +1,27 @@
+<p>
+  <strong>First name:</strong>
+  <%= @worker.first_name %>
+</p>
+
+<p>
+  <strong>Last name:</strong>
+  <%= @worker.last_name %>
+</p>
+
+<p>
+  <strong>Phone:</strong>
+  <%= @worker.phone %>
+</p>
+
+<p>
+  <strong>Company:</strong>
+  <%= @worker.company %>
+</p>
+
+<p>
+  <strong>Address:</strong>
+  <%= @worker.address %>
+</p>
+
+<%= link_to 'Edit', edit_worker_path(@worker) %> |
+<%= link_to 'Back', workers_path %>

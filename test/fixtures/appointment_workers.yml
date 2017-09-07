@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  appointment_id: 
+  worker_id: 1
+  scheduled_at: 2017-09-08 00:51:00
+
+two:
+  appointment_id: 
+  worker_id: 1
+  scheduled_at: 2017-09-08 00:51:00

@@ -1,0 +1,37 @@
+<%= form_for(@appointment) do |f| %>
+    <% if @appointment.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(@appointment.errors.count, "error") %> prohibited this appointment from being saved:</h2>
+
+          <ul>
+            <% @appointment.errors.full_messages.each do |message| %>
+                <li><%= message %></li>
+            <% end %>
+          </ul>
+        </div>
+    <% end %>
+
+    <div class="field">
+      <%= f.label :customer_id %><br>
+      <%= f.select :customer_id, Customer.all.collect { |c| [c.full_name, c.id] } %>
+    </div>
+    <div class="field">
+      <label>Workers</label><br>
+      <%= select_tag 'worker_ids[]', options_for_select(Worker.all.map { |w| [w.full_name, w.id] }, @appointment.workers.pluck(:id)), :multiple => true %>
+    </div>
+
+    <div class="field">
+      <label>Scheduled At</label><br>
+      <%= datetime_select("appointment", "scheduled_at", ampm: true, :discard_minute => true) %>
+    </div>
+
+    <div class="field">
+      <%= f.label :location %><br>
+      <%= f.text_field :location %>
+    </div>
+
+    <div class="actions">
+      <%= f.submit %>
+    </div>
+
+<% end %>

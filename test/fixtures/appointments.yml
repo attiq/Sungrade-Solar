@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  scheduled_at: 
+  location: MyString
+  customer_id: 1
+  worker_id: 1
+
+two:
+  scheduled_at: 
+  location: MyString
+  customer_id: 1
+  worker_id: 1
